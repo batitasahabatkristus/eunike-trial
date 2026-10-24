@@ -31,7 +31,7 @@ export default async function Login({ searchParams }: { searchParams: Promise<{ 
           <>
             <form action={googleLogin}>
               <input type="hidden" name="next" value={next ?? ""} />
-              <button className="btn btn-secondary btn-block">{m.google}</button>
+              <button className="btn ghost block">{m.google}</button>
             </form>
             <div className="divider">{m.or}</div>
             <FamilyForm m={m} next={next} />

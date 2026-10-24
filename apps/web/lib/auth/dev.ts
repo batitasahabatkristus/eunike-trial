@@ -7,26 +7,30 @@ const key = () => new TextEncoder().encode(process.env.EUNIKE_DEV_AUTH_SECRET ??
 
 export interface DevPersona { id: string; name: string; roles: Role[] }
 
-/** Appendix B fake data. Never real people. */
+/** Appendix B fake data. Ids and roles mirror supabase/seed.sql; the database stays the authority for roles (see getSession). */
+const U = (n: number) => `00000000-0000-4000-8000-${String(n).padStart(12, "0")}`;
 export const DEV_PERSONAS: DevPersona[] = [
-  { id: "dev-parent", name: "Keluarga Santoso (Papa Budi)", roles: ["parent"] },
-  { id: "dev-parent-multi", name: "Keluarga Wijaya (Mama Lina)", roles: ["parent", "ktb_member", "event_participant"] },
-  { id: "dev-prospect", name: "Calon Orang Tua Pranata", roles: ["prospect_parent"] },
-  { id: "dev-guru", name: "Guru Kelas Elia", roles: ["sk_guru"] },
-  { id: "dev-kurikulum", name: "Tim Kurikulum", roles: ["sk_kurikulum"] },
-  { id: "dev-sk-admin", name: "Admin SK", roles: ["sk_admin"] },
-  { id: "dev-reg-admin", name: "Admin Pendaftaran", roles: ["sk_registration_admin"] },
-  { id: "dev-bendahara", name: "Bendahara", roles: ["bendahara"] },
-  { id: "dev-ktb-fas", name: "Fasilitator KTB Kasih", roles: ["ktb_facilitator"] },
-  { id: "dev-ktb-admin", name: "Admin KTB", roles: ["ktb_admin"] },
-  { id: "dev-event-panitia", name: "Panitia Celebration SK", roles: ["event_committee"] },
-  { id: "dev-staff", name: "Staf Eunike", roles: ["staff"] },
-  { id: "dev-hrd", name: "HRD", roles: ["hrd"] },
-  { id: "dev-konselor", name: "Konselor Ruth", roles: ["konselor"] },
-  { id: "dev-konseling-admin", name: "Admin Konseling", roles: ["konseling_admin"] },
-  { id: "dev-markom", name: "Mar-com", roles: ["markom"] },
-  { id: "dev-pengurus", name: "Pengurus", roles: ["pengurus"] },
-  { id: "dev-super", name: "Super Admin", roles: ["super_admin", "pengurus"] },
+  { id: U(1), name: "Rina Santoso (Mama, Kelas Elia)", roles: ["parent"] },
+  { id: U(2), name: "Daniel Santoso (Papa + Guru Elia)", roles: ["parent", "sk_guru"] },
+  { id: U(3), name: "Maya Wijaya (Orang tua, KTB, Acara)", roles: ["parent", "ktb_member", "event_participant"] },
+  { id: U(4), name: "Sari Pranata (Mama + Guru Markus)", roles: ["parent", "sk_guru"] },
+  { id: U(5), name: "Dewi Saputra (Mama, Kelas Markus)", roles: ["parent"] },
+  { id: U(25), name: "Calon Orang Tua Pranata", roles: ["prospect_parent"] },
+  { id: U(15), name: "Maya (Kurikulum)", roles: ["sk_kurikulum"] },
+  { id: U(10), name: "Ari (Admin SK)", roles: ["sk_admin"] },
+  { id: U(17), name: "Admin Pendaftaran", roles: ["sk_registration_admin"] },
+  { id: U(18), name: "Bendahara", roles: ["bendahara"] },
+  { id: U(19), name: "Fasilitator KTB Kasih", roles: ["ktb_facilitator"] },
+  { id: U(20), name: "Admin KTB", roles: ["ktb_admin"] },
+  { id: U(21), name: "Panitia Celebration SK", roles: ["event_committee"] },
+  { id: U(22), name: "Staf Eunike", roles: ["staff"] },
+  { id: U(26), name: "Kepala Departemen", roles: ["head_department"] },
+  { id: U(23), name: "HRD", roles: ["hrd"] },
+  { id: U(11), name: "Konselor Ruth", roles: ["konselor"] },
+  { id: U(12), name: "Admin Konseling", roles: ["konseling_admin"] },
+  { id: U(24), name: "Mar-com", roles: ["markom"] },
+  { id: U(14), name: "Pengurus", roles: ["pengurus"] },
+  { id: U(13), name: "Super Admin", roles: ["super_admin", "pengurus"] },
 ];
 
 export async function signDevSession(p: DevPersona): Promise<string> {

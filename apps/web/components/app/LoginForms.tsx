@@ -24,13 +24,13 @@ export function FamilyForm({ m, next }: { m: Messages["app"]["login"]; next?: st
       <input type="hidden" name="next" value={next ?? ""} />
       <div className="field">
         <label htmlFor="f-phone">{m.phone}</label>
-        <input id="f-phone" name="phone" className="input" inputMode="tel" autoComplete="tel" placeholder="0812…" required />
+        <input id="f-phone" name="phone" className="inp" inputMode="tel" autoComplete="tel" placeholder="0812…" required />
       </div>
       <div className="field">
         <label htmlFor="f-dob">{m.dob}</label>
-        <input id="f-dob" name="dob" type="date" className="input" required />
+        <input id="f-dob" name="dob" type="date" className="inp" required />
       </div>
-      <button className="btn btn-primary btn-block" disabled={pending}>{m.familySubmit}</button>
+      <button className="btn red block" disabled={pending}>{m.familySubmit}</button>
     </form>
   );
 }
@@ -45,9 +45,9 @@ export function MagicForm({ m, next }: { m: Messages["app"]["login"]; next?: str
         <input type="hidden" name="next" value={next ?? ""} />
         <div className="field">
           <label htmlFor="m-email">{m.email}</label>
-          <input id="m-email" name="email" type="email" className="input" autoComplete="email" required />
+          <input id="m-email" name="email" type="email" className="inp" autoComplete="email" required />
         </div>
-        <button className="btn btn-secondary btn-block" disabled={pending}>{m.magicSubmit}</button>
+        <button className="btn ghost block" disabled={pending}>{m.magicSubmit}</button>
       </form>
     </details>
   );

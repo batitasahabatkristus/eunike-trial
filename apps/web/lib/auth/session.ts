@@ -3,6 +3,7 @@ import { cache } from "react";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
+import { asUser, dbConfigured } from "@/lib/db";
 import { devAuthEnabled, supabaseConfigured } from "@/lib/env";
 import { DEV_COOKIE, readDevSession } from "@/lib/auth/dev";
 import { decide, findRoute, homeFor, isRole, type Role, DISABLED_ROLES } from "@/lib/roles";
@@ -25,26 +26,34 @@ export const getSession = cache(async (): Promise<Session | null> => {
   const chosen = jar.get(ROLE_COOKIE)?.value;
   const pick = (roles: Role[]) => (isRole(chosen) && roles.includes(chosen) ? chosen : roles.length === 1 ? roles[0] : null);
 
+  const fromDb = async (userId: string, fallbackName: string, source: Session["source"]): Promise<Session> => {
+    const { roles: rows, name } = await asUser(userId, async (q) => ({
+      roles: await q<{ role: string }>("select distinct role::text from public.user_roles where profile_id = $1 and active", [userId]),
+      name: (await q.one<{ full_name: string }>("select full_name from public.profiles where id = $1", [userId]))?.full_name,
+    }));
+    const roles = rows.map((r) => r.role).filter(isRole).filter((r) => !DISABLED_ROLES.includes(r));
+    return { userId, name: name || fallbackName, roles, active: pick(roles), source };
+  };
+
   if (supabaseConfigured()) {
     const supabase = await createClient();
     const { data } = await supabase.auth.getUser();
     if (data.user) {
+      const meta = data.user.user_metadata as { full_name?: string } | undefined;
+      const name = meta?.full_name ?? data.user.email ?? "Pengguna";
+      if (dbConfigured()) return fromDb(data.user.id, name, "supabase");
       const { data: rows } = await supabase.from("user_roles").select("role").eq("active", true);
       const roles = [...new Set((rows ?? []).map((r) => r.role).filter(isRole))].filter((r) => !DISABLED_ROLES.includes(r));
-      const meta = data.user.user_metadata as { full_name?: string } | undefined;
-      return {
-        userId: data.user.id,
-        name: meta?.full_name ?? data.user.email ?? "Pengguna",
-        roles,
-        active: pick(roles),
-        source: "supabase",
-      };
+      return { userId: data.user.id, name, roles, active: pick(roles), source: "supabase" };
     }
   }
 
   if (devAuthEnabled()) {
     const dev = await readDevSession(jar.get(DEV_COOKIE)?.value);
-    if (dev) return { ...dev, active: pick(dev.roles), source: "dev" };
+    if (dev) {
+      if (dbConfigured()) return fromDb(dev.userId, dev.name, "dev");
+      return { ...dev, active: pick(dev.roles), source: "dev" };
+    }
   }
   return null;
 });
@@ -54,6 +63,9 @@ export const CONSENT_VERSION = "2026-10-draft";
 export const CONSENT_PATH = "/beranda/persetujuan";
 
 const hasConsent = cache(async (userId: string): Promise<boolean> => {
+  if (dbConfigured()) {
+    return asUser(userId, async (q) => Boolean(await q.one("select 1 from public.consents where profile_id = $1 and type = 'privacy' and version = $2 limit 1", [userId, CONSENT_VERSION])));
+  }
   const { data } = await (await createClient())
     .from("consents").select("id").eq("profile_id", userId).eq("type", "privacy").eq("version", CONSENT_VERSION).limit(1);
   return (data?.length ?? 0) > 0;
@@ -78,5 +90,6 @@ export function landingFor(session: Session, next?: string | null): string {
   if (n && decide(n, session.roles, session.active) === "allow") return n;
   if (session.roles.length > 1 && !session.active) return `${routes.pickRole}${n ? `?next=${encodeURIComponent(n)}` : ""}`;
   const role = session.active ?? session.roles[0];
-  return role ? homeFor(role, { skOnly: false }) : routes.beranda;
+  // PRD §7.3: a parent whose only module is SK lands straight in it
+  return role ? homeFor(role, { skOnly: session.roles.length === 1 }) : routes.beranda;
 }

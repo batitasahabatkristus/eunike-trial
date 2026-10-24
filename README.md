@@ -14,6 +14,20 @@ pnpm dev                                       # http://localhost:3000
 `/masuk` shows a **fake-persona login** (one button per role, fake data only). It is refused when
 `VERCEL_ENV=production` and when `NODE_ENV=production` outside Vercel previews.
 
+## Local database (Phase 1+)
+
+App data needs Postgres 16. `bash supabase/dev-db.sh start|reset|stop` runs a throwaway cluster on port 54329 with the
+migrations and fake seed applied; `DATABASE_URL` in `.env.example` points at it. Without `DATABASE_URL` the public website
+still works, app pages say the database is not configured.
+
+Other server variables: `CARD_QR_SECRET` (signs member-card QR codes, required in production), `CRON_SECRET`
+(Vercel Cron calls `/api/cron/publish` every 5 minutes with it to publish scheduled lessons).
+
+## Pilot import
+
+`pnpm import:pilot <folder-of-csv> [--dry-run]` loads the SK Batita spreadsheets. It is idempotent and reports anything it
+skipped. Column assumptions and what is not imported: `scripts/import-pilot/MAPPING.md`.
+
 ## Run against Supabase
 
 1. Create a staging project (Singapore). Apply `supabase/migrations/*.sql`, then `supabase/seed.sql` (fake data).

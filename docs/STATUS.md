@@ -1,6 +1,18 @@
 # Build status (24 Oct 2026)
 
-Phase 0 of PRD §14 is built and verified. Phases 1 to 5 are not started.
+Phases 0 and 1 of PRD §14 are built and verified locally. Phases 2 to 5 are not started.
+
+**Phase 1 (SK parity)** covers CO-01..10, SK-01..13, GU-01..05, KU-01..04, AD-01..06 and the pilot import script. See `docs/SK_PARITY.md`. Tables below are Phase 0 figures; current counts are in the next section.
+
+## Phase 1 verification
+| Check | Result |
+|---|---|
+| typecheck, lint (0 errors), unit | clean, 49 pass |
+| `pnpm db:test` (RLS on real Postgres, all SK tables and functions) | 161 pass |
+| `pnpm e2e` (Phase 0 + SK flows + WEB-01) | 28 pass |
+| Pilot import rehearsal on fake CSV, run twice | 1st run creates rows and reports 4 problems; 2nd run creates 0 |
+
+**Not verified:** anything that needs a real Supabase project (Auth flows, signed upload/download URLs, MFA). Pilot CSV columns are my assumption (Q-14): send the real exports.
 
 ## Verified
 | Check | Result |
@@ -34,7 +46,7 @@ WEB-01 compares each homepage section against `reference/website-prototype` (the
 Google sign-in, email link, family login against Supabase Auth (`generateLink` + `verifyOtp`), consent insert through the user client, MFA enforcement, session lifetimes. The SQL they depend on is tested; the Supabase Auth calls are not.
 
 ## Not built yet
-Website CMS (copy lives in `messages/*.json` as the fallback), 2FA enrolment screens, error tracking, Lighthouse and axe in CI, the import script, and everything in Phases 1 to 5.
+Website CMS (copy lives in `messages/*.json` as the fallback), 2FA enrolment screens, error tracking, Lighthouse and axe in CI, forum-reply import, and everything in Phases 2 to 5.
 
 ## Decisions I made that you may want to reverse
 - The closed mobile menu is now `visibility:hidden`. The prototype only faded it, which left invisible links reachable by keyboard.
@@ -46,4 +58,4 @@ Website CMS (copy lives in `messages/*.json` as the fallback), 2FA enrolment scr
 Q-02 repo source; Q-03 themes as in A-03; Q-04 DOB+phone login kept with rate limits (no PIN yet); Q-05 konseli form public; Q-06 volunteer/pendamping exist in the enum only; Q-08 default locale `id`; Q-15 link out.
 
 ## Next
-Phase 1 (SK parity): `sk_*` tables and RLS, parent lesson flow, guru attendance, curriculum editor, admin dashboard. The demo in `reference/demo/Eunike_Demo_Klik.html` is the behaviour reference.
+Phase 2 (KTB). Before that: a Supabase staging project to verify Auth and storage, and the real pilot exports.

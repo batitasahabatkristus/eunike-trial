@@ -32,7 +32,7 @@ export default async function Consent({ searchParams }: { searchParams: Promise<
         <label style={{ display: "flex", gap: 10, alignItems: "center", minHeight: 44, fontWeight: 700 }}>
           <input type="checkbox" name="agree" required style={{ width: 22, height: 22 }} /> {c.agree}
         </label>
-        <button className="btn btn-primary" style={{ marginTop: 12 }}>{c.submit}</button>
+        <button className="btn red" style={{ marginTop: 12 }}>{c.submit}</button>
       </form>
     </div>
   );

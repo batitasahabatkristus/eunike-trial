@@ -19,4 +19,4 @@ fi
 
 for f in migrations/*.sql; do psql "$URL" -v ON_ERROR_STOP=1 -q -f "$f"; done
 psql "$URL" -v ON_ERROR_STOP=1 -q -f seed.sql
-psql "$URL" -v ON_ERROR_STOP=1 -q -f tests/rls.sql 2>&1 >/dev/null | sed -e "s/^psql:[^ ]* //" -e "s/^NOTICE:  //"
+for f in tests/rls.sql tests/rls_sk.sql; do psql "$URL" -v ON_ERROR_STOP=1 -q -f "$f" 2>&1 >/dev/null | sed -e "s/^psql:[^ ]* //" -e "s/^NOTICE:  //"; done

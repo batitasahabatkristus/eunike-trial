@@ -15,7 +15,7 @@ export default async function Denied() {
       <main className="card center-card" role="alert">
         <h1>{m.title}</h1>
         <p>{m.body}</p>
-        <Link className="btn btn-primary" href={home}>{session ? m.home : m.login}</Link>
+        <Link className="btn red" href={home}>{session ? m.home : m.login}</Link>
       </main>
     </div>
   );

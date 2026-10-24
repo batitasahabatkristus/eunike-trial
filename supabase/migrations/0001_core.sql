@@ -20,6 +20,7 @@ begin new.updated_at = now(); return new; end $$;
 create table public.profiles (
   id uuid primary key references auth.users(id) on delete cascade,
   full_name text not null default '',
+  email text,                         -- copied from auth.users by handle_new_user; staff never read auth.users directly
   phone text,
   created_at timestamptz not null default now(),
   updated_at timestamptz not null default now(),
@@ -192,8 +193,8 @@ create trigger audit_log_no_truncate before truncate on public.audit_log
 create function public.handle_new_user() returns trigger
 language plpgsql security definer set search_path = public as $$
 begin
-  insert into public.profiles(id, full_name)
-  values (new.id, coalesce(new.raw_user_meta_data->>'full_name', ''))
+  insert into public.profiles(id, full_name, email)
+  values (new.id, coalesce(new.raw_user_meta_data->>'full_name', ''), new.email)
   on conflict do nothing;
   return new;
 end $$;

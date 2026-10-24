@@ -14,8 +14,8 @@ test.describe("access flow (PRD §4.3)", () => {
 
   test("each role lands on its home", async ({ page }) => {
     const cases: [string, string][] = [
-      ["Guru Kelas Elia", "/sk/guru"],
-      ["Admin SK", "/sk/admin"],
+      ["Ari", "/sk/admin"],
+      ["Maya \\(Kurikulum\\)", "/sk/kurikulum"],
       ["Bendahara", "/keuangan/tagihan"],
       ["Konselor Ruth", "/konseling/konselor"],
       ["Admin Konseling", "/konseling/admin"],
@@ -32,7 +32,7 @@ test.describe("access flow (PRD §4.3)", () => {
   });
 
   test("a role outside the allowed list gets the denied page, not the content", async ({ page }) => {
-    await loginAs(page, "Keluarga Santoso");
+    await loginAs(page, "Rina Santoso");
     await page.goto("/sk/admin");
     await expect(page).toHaveURL(/\/akses-ditolak$/);
     await expect(page.getByRole("heading", { name: "Akses ditolak" })).toBeVisible();
@@ -51,7 +51,7 @@ test.describe("access flow (PRD §4.3)", () => {
   });
 
   test("multi-role person picks a role, switches, and is held to it", async ({ page }) => {
-    await loginAs(page, "Keluarga Wijaya");
+    await loginAs(page, "Maya Wijaya");
     await expect(page).toHaveURL(/\/pilih-peran/);
     await page.getByRole("button", { name: "Anggota KTB" }).click();
     await expect(page).toHaveURL(/\/ktb\/kelompok$/);
@@ -60,12 +60,12 @@ test.describe("access flow (PRD §4.3)", () => {
   });
 
   test("login redirects back to the page that was asked for", async ({ page }) => {
-    await loginAs(page, "Admin SK", "/sk/admin/akun");
+    await loginAs(page, "Ari", "/sk/admin/akun");
     await expect(page).toHaveURL(/\/sk\/admin\/akun$/);
   });
 
   test("open redirect through ?next is ignored", async ({ page }) => {
-    await loginAs(page, "Admin SK", "https://evil.test/x");
+    await loginAs(page, "Ari", "https://evil.test/x");
     await expect(page).toHaveURL(/localhost:3100\/sk\/admin$/);
   });
 
@@ -76,7 +76,7 @@ test.describe("access flow (PRD §4.3)", () => {
   });
 
   test("logout ends the session", async ({ page }) => {
-    await loginAs(page, "Admin SK");
+    await loginAs(page, "Ari");
     await page.getByRole("button", { name: "Keluar" }).click();
     await page.waitForURL(/\/masuk/);
     await page.goto("/sk/admin");
