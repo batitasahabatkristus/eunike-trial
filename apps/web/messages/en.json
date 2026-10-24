@@ -1,0 +1,391 @@
+{
+  "meta": {
+    "title": "Yayasan Eunike — Faith Starts at Home",
+    "description": "Yayasan Eunike partners with Christian families to build faith, character, and Christ-centered relationships across every stage of life.",
+    "ogImageAlt": "Yayasan Eunike"
+  },
+  "nav": {
+    "home": "Yayasan Eunike home",
+    "about": "About",
+    "ministries": "Ministries",
+    "journey": "Family Journey",
+    "stories": "Stories",
+    "partner": "Partner",
+    "connect": "Connect with us",
+    "login": "Log in",
+    "menu": "Open navigation",
+    "closeMenu": "Close navigation",
+    "skip": "Skip to content",
+    "language": "Language",
+    "switchTo": "Switch to Indonesian",
+    "primary": "Main navigation"
+  },
+  "hero": {
+    "eyebrow": "Family discipleship ministry",
+    "script": "Building a family founded on Christ's love",
+    "title": "Faith starts ",
+    "titleAccent": "at home.",
+    "lead": "We walk alongside Christian families so parents are equipped, children are formed in faith, and homes become places where the love of Christ is lived every day.",
+    "ctaPrimary": "Explore our ministries",
+    "ctaSecondary": "Discover our story",
+    "verse": "But as for me and my house, we will serve the LORD.",
+    "verseRef": "Joshua 24:15",
+    "badgeTop": "Since",
+    "badgeYear": "1998",
+    "badgeBottom": "serving families",
+    "altMain": "Family walking together outdoors",
+    "altSmall": "Mother and child sharing a quiet moment",
+    "portal": "Already part of Eunike? Open the family portal"
+  },
+  "ribbon": [
+    "Christ-Centered & Gospel-Based",
+    "Family-Focused",
+    "Communal Approach",
+    "Interdenominational",
+    "Evangelical"
+  ],
+  "about": {
+    "kicker": "Who we are",
+    "title": "Family is the first place ",
+    "titleEm": "faith takes root.",
+    "lead": "Yayasan Eunike is an interdenominational Christian ministry focused on family discipleship. We partner with families so faith can be formed intentionally and passed from one generation to the next.",
+    "label": "Our conviction",
+    "featureTitle": "A strong church begins with a strong home.",
+    "featureBody": "We believe parents are the primary educators and spiritual leaders of their children. Eunike exists to equip, mentor, and build supportive communities around that calling.",
+    "featureLink": "See the family discipleship journey",
+    "beliefs": [
+      {
+        "title": "Equip Parents",
+        "body": "Helping parents grow as primary faith educators and spiritual leaders."
+      },
+      {
+        "title": "Guide Children",
+        "body": "Faith formation for children and teenagers according to their stage of growth."
+      },
+      {
+        "title": "Build Community",
+        "body": "Creating relational spaces where families can learn, practice, and grow together."
+      },
+      {
+        "title": "Partner Widely",
+        "body": "Working with churches, schools, and Christian institutions for lasting impact."
+      }
+    ]
+  },
+  "vision": {
+    "alt": "Parents accompanying children in a faith-building activity",
+    "script": "together",
+    "sticker": [
+      "Faith becomes",
+      "a way of life."
+    ],
+    "kicker": "Vision & mission",
+    "title": "Restore the home as a center of faith formation.",
+    "lead": "Our vision is to see Christian families become places where children are rooted in God's Word, formed in Christlike character, and prepared to impact the world.",
+    "missions": [
+      "Equip parents as primary educators and spiritual leaders in the family.",
+      "Provide faith guidance for children and adolescents according to their developmental stage.",
+      "Develop biblical, contextual, and practical family formation integrated with daily life.",
+      "Build strategic partnerships with churches, schools, and Christian institutions."
+    ]
+  },
+  "ministries": {
+    "kicker": "Our ministries",
+    "title": "One mission. ",
+    "titleEm": "Many family journeys.",
+    "lead": "Eunike serves families through a connected ecosystem of faith formation, education, community, counseling, and training.",
+    "items": [
+      {
+        "key": "sk",
+        "label": "Family Faith Building",
+        "title": "Sahabat Kristus",
+        "body": "A family discipleship journey that invites parents and children to grow as friends of Christ through age-appropriate formation and consistent family involvement.",
+        "cta": "Explore Sahabat Kristus",
+        "alt": "Sahabat Kristus family faith building activity"
+      },
+      {
+        "key": "eureka",
+        "label": "Early Childhood Education",
+        "title": "Eureka Christian School",
+        "body": "Holistic, biblical, family-centered education that partners with parents in developing each child's God-given potential.",
+        "cta": "Discover Eureka",
+        "alt": "Children at Eureka Christian School"
+      },
+      {
+        "key": "hs4life",
+        "label": "Homeschooling Community",
+        "title": "HS4Life",
+        "body": "A support community for homeschooling families growing together in faith, character, social skills, and life skills.",
+        "cta": "Meet the community",
+        "alt": "HS4Life homeschool community gathering"
+      },
+      {
+        "key": "counseling",
+        "label": "Counseling Ministry",
+        "title": "Family Counseling",
+        "body": "Helping couples, parents, children, and teenagers experience restoration, growth, and stronger relationships in the light of God's Word.",
+        "cta": "Learn about counseling",
+        "alt": "Family counseling conversation"
+      },
+      {
+        "key": "events",
+        "label": "Training & Development",
+        "title": "Equipping Families & Educators",
+        "body": "Seminars, retreats, parenting workshops, youth development, and educator training that turn biblical principles into practical formation.",
+        "cta": "See training opportunities",
+        "alt": "Eunike seminar participants"
+      }
+    ]
+  },
+  "ecosystem": {
+    "kicker": "How we work",
+    "title": "A connected ecosystem for ",
+    "titleEm": "family discipleship.",
+    "lead": "Programs are not isolated events. Eunike combines mentoring, practical tools, community, and partnerships to help faith become part of everyday family life.",
+    "items": [
+      {
+        "title": "Synergy & Mentoring",
+        "body": "Church support, mentoring groups, and strategic partnerships that strengthen the family discipleship movement."
+      },
+      {
+        "title": "Faith Education Tools",
+        "body": "Curriculum, seminars, media, and interactive resources that make spiritual formation usable at home."
+      },
+      {
+        "title": "Service Ecosystem",
+        "body": "Training, retreats, communities, digital content, and spaces that keep families connected and growing."
+      }
+    ],
+    "portalLink": "Open the family portal"
+  },
+  "journey": {
+    "kicker": "The family journey",
+    "title": "Walk with families through ",
+    "titleEm": "every season.",
+    "lead": "From preparing for marriage to passing on a legacy of faith, find the support that fits your family's current season of life.",
+    "steps": [
+      {
+        "tag": "Beginning",
+        "title": "Preparing for Marriage",
+        "body": "Build a Christ-centered foundation before starting a family."
+      },
+      {
+        "tag": "Early Years",
+        "title": "Raising Young Children",
+        "body": "Form faith through secure relationships, daily rhythms, and simple practices."
+      },
+      {
+        "tag": "Growing Years",
+        "title": "Children & Teenagers",
+        "body": "Guide identity, character, relationships, and calling through changing seasons."
+      },
+      {
+        "tag": "Family Life",
+        "title": "Marriage & Parenting",
+        "body": "Strengthen relationships and make discipleship a lived family culture."
+      },
+      {
+        "tag": "Legacy",
+        "title": "Passing Faith Forward",
+        "body": "Become a family whose faith blesses the next generation and the wider community."
+      }
+    ]
+  },
+  "stories": {
+    "kicker": "Life together",
+    "title": "Real families. Real community. ",
+    "titleEm": "Faith lived out.",
+    "lead": "Faith grows in ordinary moments: gathering, learning, serving, and walking through life side by side.",
+    "items": [
+      {
+        "title": "Community",
+        "caption": "Growing together, not alone.",
+        "alt": "Eunike community gathering"
+      },
+      {
+        "title": "Formation",
+        "caption": "Faith is passed through relationship.",
+        "alt": "Parent accompanying a child"
+      },
+      {
+        "title": "Equipping",
+        "caption": "Biblical truth made practical.",
+        "alt": "Eunike training session"
+      },
+      {
+        "title": "Partnership",
+        "caption": "Families, churches, and leaders together.",
+        "alt": "Eunike seminar community"
+      }
+    ]
+  },
+  "partner": {
+    "kicker": "Partner with Eunike",
+    "title": "Help build strong families for generations.",
+    "lead": "Partnership can take many forms: giving, ministry collaboration, joining a training, supporting educational resources, or opening doors for family discipleship in your church or community.",
+    "cta": "Start a conversation",
+    "link": "Explore ministries",
+    "principles": [
+      {
+        "title": "Transparent",
+        "body": "Responsible stewardship and clear fund management."
+      },
+      {
+        "title": "Accountable",
+        "body": "Professional administration that supports sustainable ministry."
+      },
+      {
+        "title": "Collaborative",
+        "body": "Building alongside churches, institutions, and people who share the vision."
+      }
+    ],
+    "bankLabel": "Giving account"
+  },
+  "contact": {
+    "kicker": "Let's connect",
+    "title": "Ready to grow faith at home?",
+    "lead": "Whether you are a parent, church leader, educator, or ministry partner, we would love to connect with you.",
+    "tagline": "Building a family founded on Christ's love.",
+    "logoAlt": "Yayasan Eunike",
+    "form": {
+      "title": "Send us a message",
+      "name": "Name",
+      "contact": "Email or WhatsApp number",
+      "message": "Message",
+      "privacy": "By sending, you agree that the Eunike team may read this message. See our",
+      "privacyLink": "Privacy Policy",
+      "submit": "Send message",
+      "sending": "Sending…",
+      "success": "Thank you. We have received your message.",
+      "error": "Your message was not sent. Please try again.",
+      "rateLimited": "Too many attempts. Please try again later.",
+      "invalid": "Please fill in your name, contact, and message."
+    }
+  },
+  "footer": {
+    "copy": "Yayasan Eunike",
+    "tagline": "Christ-Centered · Family-Focused · Faith Lived Daily",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "top": "Back to top ↑"
+  },
+  "legal": {
+    "draftBanner": "Draft — awaiting legal review and Eunike approval. Not yet an official document.",
+    "privacy": {
+      "title": "Privacy Policy",
+      "intro": "We keep family data with great care, especially children's data. The summary below describes the practices we plan to follow.",
+      "sections": [
+        {
+          "h": "What we collect",
+          "p": "Only what is needed: names, contact details, a child's date of birth, class, and photos or videos that parents upload themselves."
+        },
+        {
+          "h": "Children's data",
+          "p": "Children's data is limited to name, date of birth, class, and files uploaded by parents. Only the family and their class teacher can see it."
+        },
+        {
+          "h": "Counseling",
+          "p": "The content of counseling requests and notes can be read only by the assigned counselor. Admins and leadership cannot read it."
+        },
+        {
+          "h": "Consent and your rights",
+          "p": "We ask for your consent and keep a record of it. You can request a copy or deletion of your family's data through our contact."
+        },
+        {
+          "h": "WhatsApp messages",
+          "p": "We only send WhatsApp messages to numbers that have agreed to receive them."
+        },
+        {
+          "h": "Storage",
+          "p": "Data is stored on servers in Singapore with daily backups. Analytics, if used, are aggregate and do not track individuals."
+        }
+      ]
+    },
+    "terms": {
+      "title": "Terms of Use",
+      "intro": "These terms govern use of the Eunike website and portal.",
+      "sections": [
+        {
+          "h": "Accounts",
+          "p": "One person uses one account. Keep your access private and report anything suspicious."
+        },
+        {
+          "h": "Content",
+          "p": "Lesson materials belong to Eunike and are for registered families, not for redistribution."
+        },
+        {
+          "h": "Changes",
+          "p": "These terms may be updated. Important changes will be announced in the portal."
+        }
+      ]
+    }
+  },
+  "app": {
+    "brand": "Eunike",
+    "login": {
+      "title": "Log in to Eunike",
+      "lead": "One account for the whole family journey.",
+      "google": "Continue with Google",
+      "or": "or",
+      "familyTitle": "Log in as a family",
+      "familyHint": "Use your WhatsApp number and your child's date of birth.",
+      "phone": "WhatsApp number",
+      "dob": "Child's date of birth",
+      "familySubmit": "Log in",
+      "magicTitle": "Log in with email",
+      "email": "Email",
+      "magicSubmit": "Send login link",
+      "magicSent": "A login link has been sent if the email is registered.",
+      "familyError": "Nomor atau tanggal lahir belum cocok.",
+      "emailError": "Email atau kode salah",
+      "locked": "Too many attempts. Try again in a few minutes.",
+      "devTitle": "Development mode (fake data)",
+      "devHint": "Only available locally and in previews. Pick a role to try the flow.",
+      "devSubmit": "Log in as",
+      "backToSite": "Back to the site"
+    },
+    "pickRole": {
+      "title": "Log in as",
+      "lead": "You have several roles. This choice is remembered on this device.",
+      "note": "Role changes are recorded in the audit log."
+    },
+    "denied": {
+      "title": "Access denied",
+      "body": "You do not have permission to open this page.",
+      "home": "Go to my home",
+      "login": "Log in"
+    },
+    "home": {
+      "greeting": "Hello, {name}",
+      "today": "Today",
+      "todayEmpty": "No activities today.",
+      "services": "Services",
+      "noServices": "Your role has no active modules yet.",
+      "announcements": "Announcements",
+      "announcementsEmpty": "No announcements yet."
+    },
+    "shell": {
+      "search": "Search",
+      "notifications": "Notifications",
+      "roleSwitch": "Switch role",
+      "logout": "Log out",
+      "nav": "App navigation",
+      "activeRole": "Active role"
+    },
+    "placeholder": {
+      "title": "Coming soon",
+      "body": "This page is already access-protected and will be filled in a later build phase.",
+      "reqs": "Related requirements"
+    },
+    "states": {
+      "empty": "No data yet.",
+      "loading": "Loading…",
+      "error": "Something went wrong.",
+      "retry": "Try again"
+    },
+    "consent": {
+      "agree": "I have read and agree.",
+      "submit": "Continue"
+    }
+  }
+}

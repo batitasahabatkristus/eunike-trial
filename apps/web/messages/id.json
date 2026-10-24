@@ -1,0 +1,391 @@
+{
+  "meta": {
+    "title": "Yayasan Eunike — Iman Bermula di Rumah",
+    "description": "Yayasan Eunike mendampingi keluarga Kristen membangun iman, karakter, dan relasi yang berpusat pada Kristus di setiap tahap kehidupan.",
+    "ogImageAlt": "Yayasan Eunike"
+  },
+  "nav": {
+    "home": "Beranda Yayasan Eunike",
+    "about": "Tentang",
+    "ministries": "Pelayanan",
+    "journey": "Perjalanan Keluarga",
+    "stories": "Cerita",
+    "partner": "Bermitra",
+    "connect": "Hubungi kami",
+    "login": "Masuk",
+    "menu": "Buka navigasi",
+    "closeMenu": "Tutup navigasi",
+    "skip": "Lompat ke konten",
+    "language": "Bahasa",
+    "switchTo": "Ganti ke Bahasa Inggris",
+    "primary": "Navigasi utama"
+  },
+  "hero": {
+    "eyebrow": "Pelayanan pemuridan keluarga",
+    "script": "Membangun keluarga yang berdasar pada kasih Kristus",
+    "title": "Iman bermula ",
+    "titleAccent": "di rumah.",
+    "lead": "Kami berjalan bersama keluarga Kristen agar orang tua diperlengkapi, anak-anak dibentuk dalam iman, dan rumah menjadi tempat kasih Kristus dihidupi setiap hari.",
+    "ctaPrimary": "Kenali pelayanan kami",
+    "ctaSecondary": "Kisah kami",
+    "verse": "Tetapi aku dan seisi rumahku, kami akan beribadah kepada TUHAN.",
+    "verseRef": "Yosua 24:15",
+    "badgeTop": "Sejak",
+    "badgeYear": "1998",
+    "badgeBottom": "melayani keluarga",
+    "altMain": "Keluarga berjalan bersama di luar ruangan",
+    "altSmall": "Ibu dan anak berbagi momen yang tenang",
+    "portal": "Sudah bagian dari Eunike? Buka portal keluarga"
+  },
+  "ribbon": [
+    "Berpusat pada Kristus & Berdasar Injil",
+    "Berfokus pada Keluarga",
+    "Pendekatan Komunal",
+    "Lintas Denominasi",
+    "Injili"
+  ],
+  "about": {
+    "kicker": "Siapa kami",
+    "title": "Keluarga adalah tempat pertama ",
+    "titleEm": "iman berakar.",
+    "lead": "Yayasan Eunike adalah pelayanan Kristen lintas denominasi yang berfokus pada pemuridan keluarga. Kami bermitra dengan keluarga agar iman dibentuk dengan sengaja dan diteruskan dari satu generasi ke generasi berikutnya.",
+    "label": "Keyakinan kami",
+    "featureTitle": "Gereja yang kuat berawal dari rumah yang kuat.",
+    "featureBody": "Kami percaya orang tua adalah pendidik utama dan pemimpin rohani bagi anak-anaknya. Eunike hadir untuk memperlengkapi, membimbing, dan membangun komunitas yang mendukung panggilan itu.",
+    "featureLink": "Lihat perjalanan pemuridan keluarga",
+    "beliefs": [
+      {
+        "title": "Memperlengkapi Orang Tua",
+        "body": "Menolong orang tua bertumbuh sebagai pendidik iman utama dan pemimpin rohani."
+      },
+      {
+        "title": "Membimbing Anak",
+        "body": "Pembentukan iman bagi anak dan remaja sesuai tahap pertumbuhannya."
+      },
+      {
+        "title": "Membangun Komunitas",
+        "body": "Menciptakan ruang relasi tempat keluarga belajar, berlatih, dan bertumbuh bersama."
+      },
+      {
+        "title": "Bermitra Luas",
+        "body": "Bekerja bersama gereja, sekolah, dan lembaga Kristen demi dampak yang bertahan lama."
+      }
+    ]
+  },
+  "vision": {
+    "alt": "Orang tua mendampingi anak dalam kegiatan membangun iman",
+    "script": "bersama",
+    "sticker": [
+      "Iman menjadi",
+      "cara hidup."
+    ],
+    "kicker": "Visi & misi",
+    "title": "Memulihkan rumah sebagai pusat pembentukan iman.",
+    "lead": "Visi kami adalah melihat keluarga Kristen menjadi tempat anak-anak berakar dalam Firman Tuhan, dibentuk dalam karakter seperti Kristus, dan siap membawa dampak bagi dunia.",
+    "missions": [
+      "Memperlengkapi orang tua sebagai pendidik utama dan pemimpin rohani dalam keluarga.",
+      "Memberi bimbingan iman bagi anak dan remaja sesuai tahap perkembangannya.",
+      "Mengembangkan pembentukan keluarga yang alkitabiah, kontekstual, dan praktis, menyatu dengan kehidupan sehari-hari.",
+      "Membangun kemitraan strategis dengan gereja, sekolah, dan lembaga Kristen."
+    ]
+  },
+  "ministries": {
+    "kicker": "Pelayanan kami",
+    "title": "Satu misi. ",
+    "titleEm": "Banyak perjalanan keluarga.",
+    "lead": "Eunike melayani keluarga melalui ekosistem yang saling terhubung: pembentukan iman, pendidikan, komunitas, konseling, dan pelatihan.",
+    "items": [
+      {
+        "key": "sk",
+        "label": "Pembangunan Iman Keluarga",
+        "title": "Sahabat Kristus",
+        "body": "Perjalanan pemuridan keluarga yang mengajak orang tua dan anak bertumbuh sebagai sahabat Kristus, melalui pembentukan yang sesuai usia dan keterlibatan keluarga yang konsisten.",
+        "cta": "Kenali Sahabat Kristus",
+        "alt": "Kegiatan pembangunan iman keluarga Sahabat Kristus"
+      },
+      {
+        "key": "eureka",
+        "label": "Pendidikan Anak Usia Dini",
+        "title": "Eureka Christian School",
+        "body": "Pendidikan yang holistik, alkitabiah, dan berpusat pada keluarga, bermitra dengan orang tua mengembangkan potensi anugerah Tuhan pada setiap anak.",
+        "cta": "Kenali Eureka",
+        "alt": "Anak-anak di Eureka Christian School"
+      },
+      {
+        "key": "hs4life",
+        "label": "Komunitas Homeschooling",
+        "title": "HS4Life",
+        "body": "Komunitas pendukung bagi keluarga homeschooling yang bertumbuh bersama dalam iman, karakter, keterampilan sosial, dan keterampilan hidup.",
+        "cta": "Kenali komunitasnya",
+        "alt": "Pertemuan komunitas homeschooling HS4Life"
+      },
+      {
+        "key": "counseling",
+        "label": "Pelayanan Konseling",
+        "title": "Konseling Keluarga",
+        "body": "Menolong pasangan, orang tua, anak, dan remaja mengalami pemulihan, pertumbuhan, dan relasi yang lebih kuat dalam terang Firman Tuhan.",
+        "cta": "Pelajari tentang konseling",
+        "alt": "Percakapan konseling keluarga"
+      },
+      {
+        "key": "events",
+        "label": "Pelatihan & Pengembangan",
+        "title": "Memperlengkapi Keluarga & Pendidik",
+        "body": "Seminar, retret, lokakarya pengasuhan, pengembangan remaja, dan pelatihan pendidik yang mengubah prinsip alkitabiah menjadi pembentukan yang praktis.",
+        "cta": "Lihat kesempatan pelatihan",
+        "alt": "Peserta seminar Eunike"
+      }
+    ]
+  },
+  "ecosystem": {
+    "kicker": "Cara kami bekerja",
+    "title": "Ekosistem yang terhubung untuk ",
+    "titleEm": "pemuridan keluarga.",
+    "lead": "Program kami bukan acara yang berdiri sendiri. Eunike memadukan pendampingan, alat praktis, komunitas, dan kemitraan agar iman menjadi bagian dari kehidupan keluarga sehari-hari.",
+    "items": [
+      {
+        "title": "Sinergi & Pendampingan",
+        "body": "Dukungan gereja, kelompok pendampingan, dan kemitraan strategis yang menguatkan gerakan pemuridan keluarga."
+      },
+      {
+        "title": "Alat Pendidikan Iman",
+        "body": "Kurikulum, seminar, media, dan sumber belajar interaktif yang membuat pembentukan rohani bisa dipakai di rumah."
+      },
+      {
+        "title": "Ekosistem Layanan",
+        "body": "Pelatihan, retret, komunitas, konten digital, dan ruang-ruang yang menjaga keluarga tetap terhubung dan bertumbuh."
+      }
+    ],
+    "portalLink": "Buka portal keluarga"
+  },
+  "journey": {
+    "kicker": "Perjalanan keluarga",
+    "title": "Berjalan bersama keluarga di ",
+    "titleEm": "setiap musim.",
+    "lead": "Dari persiapan pernikahan sampai mewariskan iman, temukan dukungan yang sesuai dengan musim hidup keluarga Anda saat ini.",
+    "steps": [
+      {
+        "tag": "Awal",
+        "title": "Persiapan Pernikahan",
+        "body": "Bangun dasar yang berpusat pada Kristus sebelum membentuk keluarga."
+      },
+      {
+        "tag": "Tahun-tahun Awal",
+        "title": "Membesarkan Anak Kecil",
+        "body": "Membentuk iman lewat relasi yang aman, ritme harian, dan kebiasaan sederhana."
+      },
+      {
+        "tag": "Masa Bertumbuh",
+        "title": "Anak & Remaja",
+        "body": "Membimbing identitas, karakter, relasi, dan panggilan di tengah musim yang berubah."
+      },
+      {
+        "tag": "Kehidupan Keluarga",
+        "title": "Pernikahan & Pengasuhan",
+        "body": "Menguatkan relasi dan menjadikan pemuridan budaya hidup keluarga."
+      },
+      {
+        "tag": "Warisan",
+        "title": "Meneruskan Iman",
+        "body": "Menjadi keluarga yang imannya memberkati generasi berikutnya dan komunitas yang lebih luas."
+      }
+    ]
+  },
+  "stories": {
+    "kicker": "Hidup bersama",
+    "title": "Keluarga nyata. Komunitas nyata. ",
+    "titleEm": "Iman yang dihidupi.",
+    "lead": "Iman bertumbuh dalam momen-momen sederhana: berkumpul, belajar, melayani, dan berjalan berdampingan.",
+    "items": [
+      {
+        "title": "Komunitas",
+        "caption": "Bertumbuh bersama, tidak sendirian.",
+        "alt": "Pertemuan komunitas Eunike"
+      },
+      {
+        "title": "Pembentukan",
+        "caption": "Iman diteruskan lewat relasi.",
+        "alt": "Orang tua mendampingi anak"
+      },
+      {
+        "title": "Perlengkapan",
+        "caption": "Kebenaran Alkitab yang praktis.",
+        "alt": "Sesi pelatihan Eunike"
+      },
+      {
+        "title": "Kemitraan",
+        "caption": "Keluarga, gereja, dan pemimpin bersama.",
+        "alt": "Komunitas seminar Eunike"
+      }
+    ]
+  },
+  "partner": {
+    "kicker": "Bermitra dengan Eunike",
+    "title": "Mari membangun keluarga yang kuat untuk generasi mendatang.",
+    "lead": "Kemitraan bisa berbentuk banyak hal: memberi, kolaborasi pelayanan, mengikuti pelatihan, mendukung sumber belajar, atau membuka pintu pemuridan keluarga di gereja atau komunitas Anda.",
+    "cta": "Mulai percakapan",
+    "link": "Kenali pelayanan kami",
+    "principles": [
+      {
+        "title": "Transparan",
+        "body": "Pengelolaan yang bertanggung jawab dan dana yang jelas."
+      },
+      {
+        "title": "Akuntabel",
+        "body": "Administrasi profesional yang menopang pelayanan berkelanjutan."
+      },
+      {
+        "title": "Kolaboratif",
+        "body": "Membangun bersama gereja, lembaga, dan orang-orang yang sehati dalam visi."
+      }
+    ],
+    "bankLabel": "Rekening persembahan"
+  },
+  "contact": {
+    "kicker": "Mari terhubung",
+    "title": "Siap menumbuhkan iman di rumah?",
+    "lead": "Apakah Anda orang tua, pemimpin gereja, pendidik, atau mitra pelayanan, kami senang terhubung dengan Anda.",
+    "tagline": "Membangun keluarga yang berdasar pada kasih Kristus.",
+    "logoAlt": "Yayasan Eunike",
+    "form": {
+      "title": "Kirim pesan kepada kami",
+      "name": "Nama",
+      "contact": "Email atau nomor WhatsApp",
+      "message": "Pesan",
+      "privacy": "Dengan mengirim, Anda setuju pesan ini dibaca tim Eunike. Lihat",
+      "privacyLink": "Kebijakan Privasi",
+      "submit": "Kirim pesan",
+      "sending": "Mengirim…",
+      "success": "Terima kasih. Pesan Anda sudah kami terima.",
+      "error": "Pesan belum terkirim. Silakan coba lagi.",
+      "rateLimited": "Terlalu banyak percobaan. Silakan coba lagi nanti.",
+      "invalid": "Mohon lengkapi nama, kontak, dan pesan."
+    }
+  },
+  "footer": {
+    "copy": "Yayasan Eunike",
+    "tagline": "Berpusat pada Kristus · Berfokus pada Keluarga · Iman Dihidupi Setiap Hari",
+    "privacy": "Privasi",
+    "terms": "Syarat",
+    "top": "Kembali ke atas ↑"
+  },
+  "legal": {
+    "draftBanner": "Draf — sedang menunggu tinjauan hukum dan persetujuan Eunike. Belum berlaku sebagai dokumen resmi.",
+    "privacy": {
+      "title": "Kebijakan Privasi",
+      "intro": "Kami menyimpan data keluarga dengan hati-hati, terutama data anak-anak. Ringkasan berikut menjelaskan praktik yang kami rencanakan.",
+      "sections": [
+        {
+          "h": "Data apa yang kami kumpulkan",
+          "p": "Hanya yang diperlukan: nama, kontak, tanggal lahir anak, kelas, serta foto atau video yang diunggah orang tua sendiri."
+        },
+        {
+          "h": "Data anak",
+          "p": "Data anak dibatasi pada nama, tanggal lahir, kelas, dan berkas yang diunggah orang tua. Hanya keluarga yang bersangkutan dan guru kelasnya yang dapat melihatnya."
+        },
+        {
+          "h": "Konseling",
+          "p": "Isi permintaan dan catatan konseling hanya dapat dibaca oleh konselor yang ditugaskan. Admin dan pengurus tidak dapat membacanya."
+        },
+        {
+          "h": "Persetujuan dan hak Anda",
+          "p": "Kami meminta persetujuan Anda dan menyimpan catatannya. Anda dapat meminta salinan atau penghapusan data keluarga Anda melalui kontak kami."
+        },
+        {
+          "h": "Pesan WhatsApp",
+          "p": "Kami hanya mengirim pesan WhatsApp ke nomor yang telah setuju menerimanya."
+        },
+        {
+          "h": "Penyimpanan",
+          "p": "Data disimpan di server di Singapura dengan cadangan harian. Penggunaan analitik, jika ada, bersifat agregat tanpa pelacakan individu."
+        }
+      ]
+    },
+    "terms": {
+      "title": "Syarat Penggunaan",
+      "intro": "Syarat berikut mengatur penggunaan situs dan portal Eunike.",
+      "sections": [
+        {
+          "h": "Penggunaan akun",
+          "p": "Satu orang memakai satu akun. Jaga kerahasiaan akses Anda dan laporkan jika ada yang mencurigakan."
+        },
+        {
+          "h": "Konten",
+          "p": "Materi pelajaran adalah milik Eunike dan dipakai untuk keluarga yang terdaftar, bukan untuk disebarkan ulang."
+        },
+        {
+          "h": "Perubahan",
+          "p": "Syarat ini dapat diperbarui. Perubahan penting akan diumumkan di portal."
+        }
+      ]
+    }
+  },
+  "app": {
+    "brand": "Eunike",
+    "login": {
+      "title": "Masuk ke Eunike",
+      "lead": "Satu akun untuk seluruh perjalanan keluarga.",
+      "google": "Masuk dengan Google",
+      "or": "atau",
+      "familyTitle": "Masuk sebagai keluarga",
+      "familyHint": "Gunakan nomor WhatsApp dan tanggal lahir anak.",
+      "phone": "Nomor WhatsApp",
+      "dob": "Tanggal lahir anak",
+      "familySubmit": "Masuk",
+      "magicTitle": "Masuk dengan email",
+      "email": "Email",
+      "magicSubmit": "Kirim tautan masuk",
+      "magicSent": "Tautan masuk sudah dikirim jika email terdaftar.",
+      "familyError": "Nomor atau tanggal lahir belum cocok.",
+      "emailError": "Email atau kode salah",
+      "locked": "Terlalu banyak percobaan. Coba lagi dalam beberapa menit.",
+      "devTitle": "Mode pengembangan (data palsu)",
+      "devHint": "Hanya tersedia di lokal dan pratinjau. Pilih peran untuk mencoba alurnya.",
+      "devSubmit": "Masuk sebagai",
+      "backToSite": "Kembali ke situs"
+    },
+    "pickRole": {
+      "title": "Masuk sebagai",
+      "lead": "Anda memiliki beberapa peran. Pilihan ini diingat di perangkat ini.",
+      "note": "Perubahan peran dicatat di audit."
+    },
+    "denied": {
+      "title": "Akses ditolak",
+      "body": "Anda tidak memiliki izin untuk membuka halaman ini.",
+      "home": "Ke beranda saya",
+      "login": "Masuk"
+    },
+    "home": {
+      "greeting": "Halo, {name}",
+      "today": "Hari ini",
+      "todayEmpty": "Belum ada kegiatan hari ini.",
+      "services": "Layanan",
+      "noServices": "Peran Anda belum memiliki modul yang aktif.",
+      "announcements": "Pengumuman",
+      "announcementsEmpty": "Belum ada pengumuman."
+    },
+    "shell": {
+      "search": "Cari",
+      "notifications": "Notifikasi",
+      "roleSwitch": "Ganti peran",
+      "logout": "Keluar",
+      "nav": "Navigasi aplikasi",
+      "activeRole": "Peran aktif"
+    },
+    "placeholder": {
+      "title": "Segera hadir",
+      "body": "Halaman ini sudah dilindungi akses, dan akan diisi pada fase pembangunan berikutnya.",
+      "reqs": "Kebutuhan terkait"
+    },
+    "states": {
+      "empty": "Belum ada data.",
+      "loading": "Memuat…",
+      "error": "Terjadi kesalahan.",
+      "retry": "Coba lagi"
+    },
+    "consent": {
+      "agree": "Saya telah membaca dan menyetujui.",
+      "submit": "Lanjut"
+    }
+  }
+}

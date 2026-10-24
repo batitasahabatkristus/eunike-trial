@@ -1,0 +1,74 @@
+/* Logged-in app. Eunike theme by default; the SK theme wraps parent lesson screens and login (PRD §5.2). */
+.theme-sk { font-family: var(--font-body); }
+.theme-sk h1, .theme-sk h2, .theme-sk h3 { color: var(--sk-purple); }
+.theme-sk .btn { font-family: var(--font-btn); }
+.theme-sk .btn-primary { background: var(--red); box-shadow: 0 8px 18px rgba(221, 31, 74, 0.28); }
+.theme-sk .btn-primary:hover { background: var(--red-dark); }
+.theme-sk .btn-secondary { color: var(--sk-purple); border-color: var(--progress-off); }
+.theme-sk .input { border-color: var(--progress-off); }
+
+/* Login */
+.login { min-height: 100dvh; display: grid; place-items: center; padding: 24px 16px; position: relative; overflow: hidden; }
+.login::before { content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(circle at 0 0, rgba(255, 170, 200, 0.45) 0 90px, transparent 91px), radial-gradient(circle at 100% 4%, rgba(190, 150, 235, 0.35) 0 120px, transparent 121px), radial-gradient(circle at 0 100%, rgba(255, 170, 200, 0.4) 0 140px, transparent 141px); }
+.login-card { position: relative; width: min(440px, 100%); background: var(--card); border: 1px solid var(--border); border-radius: 28px; padding: 28px 24px; box-shadow: 0 18px 50px rgba(91, 37, 144, 0.15); }
+.login-logo { height: 64px !important; width: auto !important; background: var(--bg); border-radius: 18px; padding: 4px 10px; display: block; mix-blend-mode: multiply; margin: 0 auto 8px; }
+.login-card h1 { font-size: 1.7rem; text-align: center; margin-bottom: 4px; }
+.login-lead { text-align: center; color: var(--muted); margin-bottom: 18px; }
+.divider { display: flex; align-items: center; gap: 12px; color: var(--muted); font-weight: 700; margin: 18px 0; }
+.divider::before, .divider::after { content: ""; flex: 1; height: 1px; background: var(--border); }
+.login-card details { margin-top: 14px; border: 1px solid var(--border); border-radius: 18px; padding: 12px 16px; background: var(--bg); }
+.login-card summary { cursor: pointer; font-weight: 800; color: var(--sk-purple); min-height: 44px; display: flex; align-items: center; }
+.login-error { background: #ffd8d8; color: #9b1c1c; border-radius: 14px; padding: 10px 14px; font-weight: 700; margin-bottom: 14px; }
+.login-ok { background: var(--mint); color: #14703b; border-radius: 14px; padding: 10px 14px; font-weight: 700; margin-bottom: 14px; }
+.dev-box { margin-top: 18px; border: 2px dashed var(--sk-purple-accent); border-radius: 18px; padding: 14px; background: #fff; }
+.dev-box h2 { font-size: 1rem; margin-bottom: 2px; }
+.dev-grid { display: grid; gap: 6px; margin-top: 10px; max-height: 260px; overflow: auto; }
+.dev-grid button { text-align: left; min-height: 44px; padding: 8px 14px; border-radius: 14px; border: 1.5px solid var(--progress-off); background: var(--lilac); cursor: pointer; font-weight: 700; }
+.dev-grid small { display: block; color: var(--muted); font-weight: 600; }
+
+/* Centered simple pages (denied, pick role, consent) */
+.center-page { min-height: 100dvh; display: grid; place-items: center; padding: 24px 16px; background: var(--cream); }
+.center-card { width: min(520px, 100%); text-align: center; }
+.role-list { display: grid; gap: 10px; margin: 18px 0; text-align: left; }
+.role-list button { width: 100%; text-align: left; min-height: 56px; border-radius: 18px; border: 1.5px solid var(--lilac); background: #fff; padding: 10px 18px; font-weight: 800; color: var(--purple-deep); cursor: pointer; }
+.role-list button:hover { border-color: var(--purple); background: var(--pink-soft); }
+
+/* Shell: desktop sidebar + topbar, mobile bottom tabs (PRD §5.3) */
+.shell { min-height: 100dvh; display: grid; grid-template-columns: 248px 1fr; background: var(--cream); }
+.side { position: sticky; top: 0; height: 100dvh; display: flex; flex-direction: column; gap: 4px; padding: 18px 12px; background: rgba(255, 255, 255, 0.85); border-right: 1px solid var(--line); overflow: auto; }
+.brand { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; color: var(--purple-deep); font-family: var(--font-head); font-weight: 800; }
+.brand-mark { width: 40px; height: 40px; flex: none; }
+.side .brand { margin: 0 6px 14px; font-size: 1.4rem; }
+.side-link { display: flex; align-items: center; gap: 10px; min-height: 46px; padding: 0 14px; border-radius: 14px; text-decoration: none; color: var(--purple); font-weight: 800; }
+.side-link:hover { background: var(--pink-soft); }
+.side-link[aria-current="page"] { background: var(--purple); color: #fff; }
+.side-me { margin-top: auto; display: flex; align-items: center; gap: 10px; padding: 10px; border-radius: 16px; background: var(--lilac); font-weight: 800; color: var(--purple-deep); }
+.avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--purple-2); color: #fff; display: grid; place-items: center; font-family: var(--font-head); font-weight: 800; flex: none; }
+.me-name { line-height: 1.15; min-width: 0; } .me-name small { display: block; color: var(--muted); font-weight: 700; }
+.main-col { min-width: 0; display: flex; flex-direction: column; }
+.topbar { display: flex; align-items: center; gap: 12px; padding: 12px 24px; background: rgba(255, 249, 246, 0.85); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 10; }
+.topbar .spacer { flex: 1; }
+.topbar .search { max-width: 340px; width: 100%; }
+.role-chip { display: inline-flex; align-items: center; gap: 6px; min-height: 40px; padding: 0 14px; border-radius: 999px; background: #fff; border: 1.5px solid var(--purple); color: var(--purple); font-weight: 800; text-decoration: none; font-size: 0.9rem; }
+.icon-btn { width: 44px; height: 44px; border-radius: 50%; background: var(--lilac); display: grid; place-items: center; text-decoration: none; border: 0; cursor: pointer; font-size: 1.15rem; }
+.content { padding: 28px 24px 120px; max-width: 1100px; width: 100%; }
+.page-title { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 18px; }
+.page-title h1 { font-size: 2rem; margin: 0; }
+.tiles { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 14px; }
+.tile { display: flex; align-items: center; gap: 12px; background: #fff; border: 1px solid var(--line); border-radius: 20px; padding: 14px; text-decoration: none; color: var(--purple); font-weight: 800; min-height: 72px; }
+.tile:hover { border-color: var(--purple-2); }
+.tile .ic { width: 46px; height: 46px; border-radius: 50%; background: var(--lilac); display: grid; place-items: center; font-size: 1.3rem; flex: none; }
+.bnav { display: none; }
+
+@media (max-width: 840px) {
+  .shell { grid-template-columns: 1fr; }
+  .side { display: none; }
+  .topbar { padding: 10px 14px; }
+  .topbar .search { display: none; }
+  .content { padding: 18px 14px 120px; }
+  .bnav { position: fixed; left: 10px; right: 10px; bottom: 10px; z-index: 20; display: flex; background: #fff; border: 1px solid var(--line); border-radius: 26px 26px 22px 22px; box-shadow: 0 -6px 26px rgba(91, 37, 144, 0.16); padding: 6px; padding-bottom: calc(6px + env(safe-area-inset-bottom, 0px)); overflow-x: auto; }
+  .bnav a { flex: 1; min-width: 64px; min-height: 52px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; border-radius: 18px; text-decoration: none; color: var(--muted); font-size: 0.72rem; font-weight: 800; }
+  .bnav a[aria-current="page"] { background: var(--lilac); color: var(--purple); }
+  .bnav .ic { font-size: 1.3rem; line-height: 1; }
+}

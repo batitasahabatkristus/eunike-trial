@@ -1,0 +1,147 @@
+/* Design tokens copied from PRD §5.1 / §5.2. Do not rename or round them. */
+:root {
+  --purple: #612e8f;
+  --purple-2: #8f4698;
+  --purple-deep: #452063;
+  --lilac: #d9c7e1;
+  --pink: #dd188a;
+  --pink-bright: #f23da2;
+  --pink-soft: #fad9e8;
+  --peach: #fcd3c9;
+  --cream: #feece2;
+  --paper: #fff9f6;
+  --ink: #392340;
+  --muted: #6f5b73;
+  --white: #ffffff;
+  --yellow: #f5c64b;
+  --line: rgba(97, 46, 143, 0.14);
+  --shadow-sm: 0 12px 30px rgba(67, 31, 84, 0.08);
+  --shadow-md: 0 24px 65px rgba(67, 31, 84, 0.14);
+  --radius-xl: 42px;
+  --radius-lg: 30px;
+  --radius-md: 22px;
+  --container: 1180px;
+
+  /* Derived, F-07: --pink fails 4.5:1 for small text on cream/lilac, so small pink text uses this darker step. */
+  --pink-text: #bc0f74;
+  --header-h: 78px;
+  --focus: var(--purple);
+
+  --font-body: var(--font-quicksand), "Quicksand", system-ui, sans-serif;
+  --font-head: var(--font-baloo), "Baloo 2", system-ui, sans-serif;
+  --font-accent: var(--font-parisienne), cursive;
+
+  /* Status badges, PRD §5.5 */
+  --st-pending: #b45309;       --st-pending-bg: #fff1dd;
+  --st-need: #b0126e;          --st-need-bg: #fad9e8;
+  --st-interview: #612e8f;     --st-interview-bg: #ece0f4;
+  --st-done: #176b3b;          --st-done-bg: #dff3e7;
+  --st-active: #1d5fa8;        --st-active-bg: #e0eefb;
+  --st-rejected: #b3261e;      --st-rejected-bg: #fde4e2;
+  --st-muted: #5b5160;         --st-muted-bg: #ece8ee;
+}
+
+/* SK theme: Sahabat Kristus parent lesson screens and the login page (PRD §5.2).
+   Purple means choosing and navigating; red means action and finishing. */
+.theme-sk {
+  --red: #dd1f4a;
+  --red-dark: #b8123a;
+  --sk-purple: #5b2590;
+  --sk-purple-accent: #8446c9;
+  --bg: #fff2f6;
+  --card: #ffffff;
+  --lilac: #f1e7fc;
+  --pink-light: #fde5ee;
+  --peach: #fff0d4;
+  --mint: #e2f5e9;
+  --text: #2a1740;
+  --muted: #6b5a7e;
+  --border: #f1deea;
+  --progress-off: #e8d5f0;
+  --success: #1b8a4b;
+  --fullscreen-overlay: #150d1d;
+  --font-body: var(--font-nunito), "Nunito", system-ui, sans-serif;
+  --font-btn: var(--font-fredoka), "Fredoka", system-ui, sans-serif;
+  --focus: var(--sk-purple);
+  background: var(--bg);
+  color: var(--text);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--ink);
+  background: var(--paper);
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, h4 { font-family: var(--font-head); line-height: 1.12; margin: 0 0 0.5em; color: var(--purple-deep); font-weight: 700; }
+p { margin: 0 0 1em; }
+a { color: var(--purple); text-underline-offset: 3px; }
+img { max-width: 100%; height: auto; display: block; }
+button, input, select, textarea { font: inherit; color: inherit; }
+
+/* F-07 visible focus on every interactive element */
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; border-radius: 8px; }
+
+.skip-link {
+  position: absolute; left: 12px; top: -64px; z-index: 100; background: var(--purple-deep); color: #fff;
+  padding: 10px 16px; border-radius: 999px; text-decoration: none; font-weight: 700;
+}
+.skip-link:focus { top: 12px; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+.container { width: min(var(--container), calc(100% - 40px)); margin-inline: auto; }
+
+/* Buttons: primary pink pill 50px, hover lifts 2px; secondary translucent white with purple outline. */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 50px; padding: 0 26px;
+  border-radius: 999px; border: 2px solid transparent; font-family: var(--font-head); font-weight: 700; font-size: 1.02rem;
+  text-decoration: none; cursor: pointer; transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn:disabled, .btn[aria-disabled="true"] { opacity: 0.55; cursor: not-allowed; transform: none; }
+.btn-primary { background: var(--pink); color: #fff; box-shadow: 0 10px 24px rgba(221, 24, 138, 0.28); }
+.btn-primary:hover { background: var(--pink-bright); color: #fff; }
+.btn-secondary { background: rgba(255, 255, 255, 0.7); color: var(--purple); border-color: var(--purple); }
+.btn-secondary:hover { background: #fff; }
+.btn-text { background: none; color: var(--purple); min-height: 44px; padding: 0 10px; text-decoration: underline; }
+.btn-sm { min-height: 44px; padding: 0 18px; font-size: 0.95rem; }
+.btn-block { width: 100%; }
+
+.chip { display: inline-flex; align-items: center; min-height: 32px; padding: 0 14px; border-radius: 999px; background: var(--pink-soft); color: var(--purple-deep); font-weight: 700; font-size: 0.88rem; }
+.card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); padding: 28px; }
+
+.badge { display: inline-flex; align-items: center; padding: 3px 12px; border-radius: 999px; font-size: 0.8rem; font-weight: 800; background: var(--st-muted-bg); color: var(--st-muted); }
+.badge-pending, .badge-terjadwal, .badge-menunggu { background: var(--st-pending-bg); color: var(--st-pending); }
+.badge-need { background: var(--st-need-bg); color: var(--st-need); }
+.badge-interview { background: var(--st-interview-bg); color: var(--st-interview); }
+.badge-done, .badge-terbit, .badge-lunas { background: var(--st-done-bg); color: var(--st-done); }
+.badge-active { background: var(--st-active-bg); color: var(--st-active); }
+.badge-rejected { background: var(--st-rejected-bg); color: var(--st-rejected); }
+
+/* Forms */
+.field { display: grid; gap: 6px; margin-bottom: 16px; }
+.field label { font-weight: 700; color: var(--purple-deep); font-size: 0.95rem; }
+.input, .select, .textarea {
+  width: 100%; min-height: 48px; padding: 10px 16px; background: #fff; border: 1.5px solid var(--lilac); border-radius: 16px;
+}
+.textarea { min-height: 130px; resize: vertical; }
+.input:hover, .select:hover, .textarea:hover { border-color: var(--purple-2); }
+.field-error { color: var(--st-rejected); font-size: 0.9rem; font-weight: 600; }
+.honeypot { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+/* Shared list states (PRD §5.3) */
+.skeleton { background: linear-gradient(90deg, var(--cream), var(--pink-soft), var(--cream)); background-size: 200% 100%; animation: shimmer 1.4s infinite; border-radius: 12px; min-height: 18px; }
+@keyframes shimmer { to { background-position: -200% 0; } }
+.empty-state, .error-state { text-align: center; padding: 40px 20px; color: var(--muted); }
+
+.toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); background: var(--purple-deep); color: #fff; padding: 12px 22px; border-radius: 999px; box-shadow: var(--shadow-md); z-index: 90; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+}

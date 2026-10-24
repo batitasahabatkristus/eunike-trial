@@ -1,0 +1,14 @@
+{
+  "name": "eunike-superapp",
+  "private": true,
+  "packageManager": "pnpm@10.28.0",
+  "scripts": {
+    "dev": "pnpm --filter web dev",
+    "build": "pnpm --filter web build",
+    "test": "pnpm --filter web test",
+    "e2e": "pnpm --filter web e2e",
+    "db:test": "bash supabase/tests/run.sh",
+    "lint": "pnpm --filter web lint",
+    "typecheck": "pnpm --filter web typecheck"
+  }
+}
