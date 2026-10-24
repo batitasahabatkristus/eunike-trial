@@ -318,17 +318,8 @@ revoke all on function public.family_profiles(uuid) from public, anon, authentic
 
 -- ------------------------------------------------------------------ guard triggers (column-level rules RLS cannot express)
 -- These guards run as the INVOKER on purpose: inside a SECURITY DEFINER function current_user would be the owner and the check would never fire.
--- Parents may change only privacy_timeline; SK staff may change the rest. Stops a parent editing wa_number (the login key).
-create function public.families_guard() returns trigger language plpgsql set search_path = public as $$
-begin
-  if current_user in ('postgres', 'service_role', 'supabase_admin') then return new; end if;
-  if public.has_any_role(array['sk_admin','sk_registration_admin','super_admin']::public.app_role[]) then return new; end if;
-  if (to_jsonb(new) - 'privacy_timeline' - 'updated_at') is distinct from (to_jsonb(old) - 'privacy_timeline' - 'updated_at') then
-    raise exception 'only privacy_timeline can be changed by a family' using errcode = '42501';
-  end if;
-  return new;
-end $$;
-create trigger families_guard before update on public.families for each row execute function public.families_guard();
+-- families_guard now lives in 0001 (together with the column-level UPDATE grants on families and profiles).
+
 
 -- Guru may only pin/hide posts; nothing else on a post can change after it is written.
 create function public.sharing_posts_guard() returns trigger language plpgsql set search_path = public as $$
@@ -628,8 +619,10 @@ grant insert, update, delete on public.sk_class_members to authenticated;
 grant select on public.epk_reports to authenticated;
 grant select on public.v_epk_family to authenticated;
 grant insert, update, delete on public.content_items to authenticated;
-grant select, insert, update on public.families to authenticated;
-grant select, insert, update on public.children to authenticated;
+-- UPDATE on families stays column-level (0001); data_status etc. change only inside the definer functions below.
+grant select, insert on public.families to authenticated;
+grant select, insert on public.children to authenticated;
+grant update (name, dob) on public.children to authenticated;   -- family_id, deleted_at, pilot_ref: server-side only
 grant insert on public.family_members to authenticated;
 -- family_pins: only through functions
 
@@ -730,7 +723,7 @@ create policy ci_markom_write on public.content_items for all using (public.has_
   with check (public.has_any_role(array['markom','super_admin']::public.app_role[]));
 
 -- admins may change SK roles (AD-03). Never grant super_admin or counseling roles, never touch their own last admin role.
-drop policy roles_super_write on public.user_roles;
+drop policy if exists roles_super_write on public.user_roles;
 create policy roles_super_write on public.user_roles for all using (public.has_role('super_admin')) with check (public.has_role('super_admin'));
 create policy roles_sk_admin_write on public.user_roles for all
   using (public.has_role('sk_admin') and role in ('parent','sk_guru','sk_kurikulum','sk_admin'))
@@ -821,7 +814,8 @@ end $$;
 revoke execute on all functions in schema public from public, anon;
 grant execute on all functions in schema public to authenticated, service_role;
 revoke execute on function public.notify(uuid, text, text, text), public.family_profiles(uuid),
-  public.publish_due_lessons(), public.rate_limit_hit(text, integer, integer), public.find_family_login(text, date) from authenticated;
+  public.publish_due_lessons(), public.rate_limit_hit(text, integer, integer), public.find_family_login(text, date),
+  public.sync_roles_to_jwt(), public.audit_row(), public.handle_new_user(), public.sync_user_email() from authenticated;
 
 -- Parents cannot read other families' class rows, so the registration screen asks for the headcount through this function.
 create function public.class_load(cid uuid) returns integer language sql stable security definer set search_path = public as $$

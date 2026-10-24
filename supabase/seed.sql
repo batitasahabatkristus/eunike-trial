@@ -210,8 +210,8 @@ insert into public.ayat_progress (family_id, lesson_id, items) values
 insert into public.power_progress (family_id, lesson_id, items) values
   ('10000000-0000-4000-8000-000000000001', '40000000-0000-4000-8000-000000000011', '{t,f,f}');
 insert into public.family_pins (family_id, pin_hash) values
-  ('10000000-0000-4000-8000-000000000001', crypt('1234', gen_salt('bf'))),
-  ('10000000-0000-4000-8000-000000000002', crypt('1234', gen_salt('bf')));
+  ('10000000-0000-4000-8000-000000000001', extensions.crypt('1234', extensions.gen_salt('bf'))),
+  ('10000000-0000-4000-8000-000000000002', extensions.crypt('1234', extensions.gen_salt('bf')));
 
 -- ------------------------------------------------------------------ meetings and attendance (5 Saturdays, demo pattern)
 insert into public.sk_meetings (class_id, lesson_id, held_on)

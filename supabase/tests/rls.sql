@@ -41,6 +41,48 @@ select t.throws($$select * from public.find_family_login('6281200001111','2024-0
 select t.throws($$select public.rate_limit_hit('x',1,1)$$, 'parent cannot call rate limiter');
 update public.families set name = 'Hacked' where id = '10000000-0000-4000-8000-000000000002';
 select t.throws($$update public.families set wa_number = '6280000000000' where id = '10000000-0000-4000-8000-000000000001'$$, 'parent cannot change the family WhatsApp number (login key)');
+select t.throws($$update public.families set kbk_number = 'KBK-9' where id = '10000000-0000-4000-8000-000000000001'$$, 'parent cannot change the KBK number');
+select t.throws($$update public.families set deleted_at = now() where id = '10000000-0000-4000-8000-000000000001'$$, 'parent cannot soft-delete the family (no column privilege)');
+select t.throws($$update public.families set created_by = '00000000-0000-4000-8000-000000000001' where id = '10000000-0000-4000-8000-000000000001'$$, 'parent cannot rewrite created_by');
+select t.throws($$update public.families set data_status = 'ok' where id = '10000000-0000-4000-8000-000000000001'$$, 'parent cannot set data_status directly');
+update public.families set name = 'Keluarga Santoso', privacy_timeline = false where id = '10000000-0000-4000-8000-000000000001';
+select t.ok((select privacy_timeline from public.families) = false and (select name from public.families) = 'Keluarga Santoso', 'parent can change name and privacy_timeline');
+select t.throws($$update public.families set wa_number = '62abc' where id = '10000000-0000-4000-8000-000000000001'$$, 'malformed WhatsApp number is rejected');
+-- profiles: only full_name and phone
+update public.profiles set full_name = 'Rina S.', phone = '081200001111' where id = '00000000-0000-4000-8000-000000000001';
+select t.ok((select full_name from public.profiles) = 'Rina S.', 'user can change own full_name and phone');
+select t.throws($$update public.profiles set email = 'evil@example.test' where id = '00000000-0000-4000-8000-000000000001'$$, 'user cannot change own email');
+select t.throws($$update public.profiles set id = '00000000-0000-4000-8000-000000000099' where id = '00000000-0000-4000-8000-000000000001'$$, 'user cannot change profile id');
+select t.throws($$update public.profiles set deleted_at = now() where id = '00000000-0000-4000-8000-000000000001'$$, 'user cannot soft-delete own profile');
+select t.throws($$update public.children set family_id = '10000000-0000-4000-8000-000000000002' where family_id = '10000000-0000-4000-8000-000000000001'$$, 'nobody moves a child to another family from the client');
+select t.throws($$select public.sync_roles_to_jwt()$$, 'trigger functions are not callable by clients');
+select t.throws($$select public.audit_row()$$, 'audit_row is not callable by clients');
+rollback;
+
+-- ---- hosted-Supabase privilege posture: anon can call nothing, PUBLIC has no EXECUTE on any function
+begin;
+set local role anon;
+select t.throws($$select public.has_role('parent')$$, 'anon cannot call has_role');
+select t.throws($$select public.is_family_member('10000000-0000-4000-8000-000000000001')$$, 'anon cannot call is_family_member');
+select t.throws($$select * from public.profiles$$, 'anon has no table access');
+rollback;
+select t.ok(not exists (select 1 from information_schema.routine_privileges where routine_schema = 'public' and grantee in ('PUBLIC','anon')), 'no public function is executable by PUBLIC or anon');
+select t.ok(not exists (select 1 from pg_proc p join pg_namespace n on n.oid = p.pronamespace
+  where n.nspname = 'public' and p.prosecdef and not exists (select 1 from unnest(coalesce(p.proconfig, '{}')) c where c like 'search_path=%')), 'every SECURITY DEFINER function pins search_path');
+
+-- role-sync trigger: insert, update (incl. moving a role between profiles) and delete all refresh the claim
+begin;
+set local role service_role;
+insert into public.user_roles(profile_id, role) values ('00000000-0000-4000-8000-000000000005', 'markom');
+select t.ok((select raw_app_meta_data->'roles' from auth.users where id = '00000000-0000-4000-8000-000000000005') ? 'markom', 'role INSERT syncs to the JWT claim');
+update public.user_roles set profile_id = '00000000-0000-4000-8000-000000000004' where profile_id = '00000000-0000-4000-8000-000000000005' and role = 'markom';
+select t.ok(not ((select raw_app_meta_data->'roles' from auth.users where id = '00000000-0000-4000-8000-000000000005') ? 'markom'), 'moving a role removes it from the old profile claim');
+select t.ok((select raw_app_meta_data->'roles' from auth.users where id = '00000000-0000-4000-8000-000000000004') ? 'markom', 'moving a role adds it to the new profile claim');
+delete from public.user_roles where profile_id = '00000000-0000-4000-8000-000000000004' and role = 'markom';
+select t.ok(not ((select raw_app_meta_data->'roles' from auth.users where id = '00000000-0000-4000-8000-000000000004') ? 'markom'), 'role DELETE syncs to the JWT claim');
+-- email sync
+update auth.users set email = 'rina.new@seed.example.test' where id = '00000000-0000-4000-8000-000000000001';
+select t.ok((select email from public.profiles where id = '00000000-0000-4000-8000-000000000001') = 'rina.new@seed.example.test', 'auth email change syncs to profiles.email');
 rollback;
 begin;
 set local role service_role;
