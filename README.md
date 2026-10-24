@@ -23,6 +23,10 @@ still works, app pages say the database is not configured.
 Other server variables: `CARD_QR_SECRET` (signs member-card QR codes, required in production), `CRON_SECRET`
 (Vercel Cron calls `/api/cron/publish` every 5 minutes with it to publish scheduled lessons).
 
+## Demo roster (fake)
+
+`supabase/seed_roster.sql`, run once after `seed.sql`, adds about 265 invented children in 188 families across 41 classes named like the real SK list, with three Saturdays of attendance. Every row has `pilot_ref` starting `demo:`; the cleanup statements are at the bottom of the file. No real data.
+
 ## Pilot import
 
 `pnpm import:pilot <folder-of-csv> [--dry-run]` loads the SK Batita spreadsheets. It is idempotent and reports anything it
