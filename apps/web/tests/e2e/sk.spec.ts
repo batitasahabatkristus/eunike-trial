@@ -34,7 +34,7 @@ test.describe("Sahabat Kristus parity (PRD §9)", () => {
     const masuk = page.getByRole("radio", { name: "Masuk", checked: false });
     const n = await masuk.count();
     for (let i = 0; i < n; i++) await masuk.first().click();
-    await page.getByRole("button", { name: "Simpan absensi" }).click();
+    if (n > 0) await page.getByRole("button", { name: "Simpan absensi" }).click(); // n = 0 when an earlier run already marked everyone
     await expect(page.getByText("✓ Absensi tersimpan")).toBeVisible();
     expect(Date.now() - t0).toBeLessThan(3000 + n * 150); // PRD: a class of ~12 well under 3 s of waiting for the save
     await page.reload();

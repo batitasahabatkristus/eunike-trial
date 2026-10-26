@@ -80,3 +80,12 @@
 .side-sub { display: grid; gap: 2px; margin: 0 0 6px 14px; padding-left: 10px; border-left: 2px solid var(--line); }
 .side-sub a { display: flex; align-items: center; min-height: 38px; padding: 0 12px; border-radius: 10px; text-decoration: none; color: var(--muted); font-weight: 700; font-size: 14px; }
 .side-sub a:hover { background: var(--blush); } .side-sub a[aria-current="page"] { color: var(--purple); background: var(--lilac); }
+
+/* Loading cue beside a navigation link while its page loads (useLinkStatus) */
+.spin-sm { width: 14px; height: 14px; border-width: 2px; }
+.side-link .link-spin { margin-left: 4px; }
+.side-sub a { display: flex; align-items: center; gap: 8px; }
+.side-sub a .link-spin { margin-left: 4px; }
+.side-link[aria-current="page"] .link-spin { border-color: rgba(255, 255, 255, .4); border-top-color: #fff; }
+.bnav a { position: relative; }
+.bnav a .link-spin { position: absolute; top: 6px; right: 10px; }

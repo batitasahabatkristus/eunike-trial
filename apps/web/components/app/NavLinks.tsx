@@ -4,6 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { NavItem, SubItem } from "@/lib/nav";
 import { findRoute } from "@/lib/roles";
+import { LinkSpinner } from "@/components/ui/LinkSpinner";
 
 /** One highlighted item: the module the current path belongs to (from the access table). */
 const isActive = (pathname: string, item: NavItem) => findRoute(pathname)?.module === item.module;
@@ -26,11 +27,12 @@ export function SideNav({ items, subs, label }: { items: NavItem[]; subs: Record
           <div key={i.module} style={{ display: "contents" }}>
             <Link href={i.href} className="side-link" aria-current={active && !list ? "page" : undefined}>
               <span aria-hidden="true">{i.icon}</span> {i.label}
+              <LinkSpinner />
             </Link>
             {active && list ? (
               <div className="side-sub">
                 {list.map((s) => (
-                  <Link key={s.href} href={s.href} aria-current={subActive(p, s.href, list) ? "page" : undefined}>{s.label}</Link>
+                  <Link key={s.href} href={s.href} aria-current={subActive(p, s.href, list) ? "page" : undefined}>{s.label}<LinkSpinner /></Link>
                 ))}
               </div>
             ) : null}
@@ -55,6 +57,7 @@ export function BottomNav({ sk, eu, modules, label }: { sk: SubItem[]; eu: SubIt
         <Link key={i.href} href={i.href} aria-current={i.on ? "page" : undefined}>
           <span className="ic" aria-hidden="true">{i.icon}</span>
           {i.label}
+          <LinkSpinner />
         </Link>
       ))}
     </nav>
