@@ -10,6 +10,7 @@ import { appMessages } from "@/lib/i18n";
 import { safeNext } from "@/lib/routes";
 import { ROLE_LABEL } from "@/lib/roles";
 import { FamilyForm, MagicForm } from "@/components/app/LoginForms";
+import { DevLoginGrid } from "@/components/app/DevLoginGrid";
 
 export const metadata: Metadata = { title: "Masuk" };
 
@@ -43,14 +44,9 @@ export default async function Login({ searchParams }: { searchParams: Promise<{ 
           <section className="dev-box" aria-labelledby="dev-title">
             <h2 id="dev-title">{m.devTitle}</h2>
             <p className="login-lead" style={{ textAlign: "left", margin: 0 }}>{m.devHint}</p>
-            <form action={devLogin} className="dev-grid">
+            <form action={devLogin}>
               <input type="hidden" name="next" value={next ?? ""} />
-              {DEV_PERSONAS.map((p) => (
-                <button key={p.id} name="persona" value={p.id}>
-                  {p.name}
-                  <small>{p.roles.map((r) => ROLE_LABEL[r]).join(" · ")}</small>
-                </button>
-              ))}
+              <DevLoginGrid personas={DEV_PERSONAS.map((p) => ({ id: p.id, name: p.name, roles: p.roles.map((r) => ROLE_LABEL[r]).join(" · ") }))} openingText={m.devOpening} />
             </form>
           </section>
         ) : null}
