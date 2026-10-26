@@ -21,7 +21,7 @@ migrations and fake seed applied; `DATABASE_URL` in `.env.example` points at it.
 still works, app pages say the database is not configured.
 
 Other server variables: `CARD_QR_SECRET` (signs member-card QR codes, required in production), `CRON_SECRET`
-(Vercel Cron calls `/api/cron/publish` every 5 minutes with it to publish scheduled lessons).
+(Vercel Cron calls `/api/cron/publish` once a day at 01:00 UTC = 08:00 WIB with it, the most the free Hobby plan allows, so a lesson scheduled for 08:00 may appear up to an hour late. On Pro, change the schedule in `apps/web/vercel.json` to `*/5 * * * *`.)
 
 ## Demo roster (fake)
 
