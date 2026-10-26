@@ -346,7 +346,7 @@ end $$;
 create trigger memory_markers_guard before update on public.memory_markers for each row execute function public.memory_markers_guard();
 create trigger memory_markers_updated before update on public.memory_markers for each row execute function public.set_updated_at();
 
-create function public.memory_marker_files_limit() returns trigger language plpgsql as $$
+create function public.memory_marker_files_limit() returns trigger language plpgsql set search_path = public as $$
 begin
   if (select count(*) from public.memory_marker_files where marker_id = new.marker_id) >= 3 then
     raise exception 'maximum 3 files per Memory Marker' using errcode = '23514';
@@ -815,7 +815,8 @@ revoke execute on all functions in schema public from public, anon;
 grant execute on all functions in schema public to authenticated, service_role;
 revoke execute on function public.notify(uuid, text, text, text), public.family_profiles(uuid),
   public.publish_due_lessons(), public.rate_limit_hit(text, integer, integer), public.find_family_login(text, date),
-  public.sync_roles_to_jwt(), public.audit_row(), public.handle_new_user(), public.sync_user_email() from authenticated;
+  public.sync_roles_to_jwt(), public.audit_row(), public.handle_new_user(), public.sync_user_email(),
+  public.class_capacity_guard(), public.memory_marker_notify() from authenticated;
 
 -- Parents cannot read other families' class rows, so the registration screen asks for the headcount through this function.
 create function public.class_load(cid uuid) returns integer language sql stable security definer set search_path = public as $$
