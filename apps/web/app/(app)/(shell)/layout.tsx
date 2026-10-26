@@ -9,12 +9,13 @@ import { ROLE_LABEL, decide } from "@/lib/roles";
 import { BottomNav, SideNav } from "@/components/app/NavLinks";
 import { BrandMark } from "@/components/site/BrandMark";
 import { ToastProvider } from "@/components/ui/Toast";
+import { MockProvider } from "@/components/mock/MockProvider";
 
 /** Pages inside decide their own access (see guard()); the shell only draws chrome for whoever is signed in. */
 export default async function Shell({ children }: { children: React.ReactNode }) {
   const m = appMessages();
   const session = await getSession();
-  if (!session) return <div className="content theme-eu">{children}</div>;
+  if (!session) return <ToastProvider><MockProvider><div className="content theme-eu">{children}</div></MockProvider></ToastProvider>;
 
   const items = navFor(session.roles, session.active);
   const role = session.active ?? session.roles[0];
@@ -24,6 +25,7 @@ export default async function Shell({ children }: { children: React.ReactNode })
     : 0;
   return (
     <ToastProvider>
+      <MockProvider>
       <div className="shell theme-eu">
         <aside className="side">
           <Link className="brand" href={routes.beranda}><BrandMark /> {m.brand}</Link>
@@ -57,6 +59,7 @@ export default async function Shell({ children }: { children: React.ReactNode })
         </div>
         <BottomNav {...bottomNavsFor(session.roles, session.active)} label={m.shell.nav} />
       </div>
+      </MockProvider>
     </ToastProvider>
   );
 }

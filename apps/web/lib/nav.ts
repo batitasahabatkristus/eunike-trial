@@ -48,6 +48,17 @@ const SUB: Record<string, SubItem[]> = {
     { href: "/sk/admin/jadwal", label: "Jadwal terbit", icon: "📅" }, { href: "/sk/admin/hadir", label: "Laporan hadir", icon: "📄" },
     { href: "/sk/admin/epk", label: "Persetujuan EPK", icon: "✅" }, { href: "/sk/admin/akun", label: "Akun dan peran", icon: "⚙️" },
   ],
+  "/sk/admin/pendaftar": [
+    { href: "/sk/admin/pendaftar", label: "Pendaftar", icon: "📝" }, { href: "/sk/admin/pendaftar/pasangan", label: "Pasangan", icon: "💑" },
+    { href: "/sk/admin/wawancara", label: "Wawancara", icon: "🗣️" },
+  ],
+  "/keuangan": [{ href: "/keuangan/tagihan", label: "Tagihan", icon: "💳" }, { href: "/keuangan/laporan", label: "Laporan", icon: "📊" }],
+  "/markom": [
+    { href: "/markom/admin", label: "Kalender konten", icon: "🗓️" }, { href: "/markom/admin/pengumuman", label: "Pengumuman", icon: "📣" },
+    { href: "/markom/website", label: "Website", icon: "🌐" },
+  ],
+  "/staf/saya": [{ href: "/staf/saya", label: "Beranda staf", icon: "🗂️" }, { href: "/staf/saya/evaluasi", label: "Evaluasi diri", icon: "📝" }],
+  "/ktb/admin": [{ href: "/ktb/admin", label: "Kelompok", icon: "👥" }, { href: "/ktb/admin/rekap", label: "Rekap", icon: "📊" }],
   "/beranda": [
     { href: "/beranda", label: "Beranda", icon: "🏠" }, { href: "/beranda/jadwal", label: "Jadwal", icon: "📅" },
     { href: "/beranda/keluarga", label: "Keluarga saya", icon: "👨‍👩‍👧" }, { href: "/beranda/laporan", label: "Laporan semester", icon: "📄" },

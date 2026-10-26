@@ -29,7 +29,11 @@ insert into auth.users (id, email, raw_user_meta_data) values
   ('00000000-0000-4000-8000-000000000023', 'hrd@seed.example.test',         '{"full_name":"HRD"}'),
   ('00000000-0000-4000-8000-000000000024', 'markom@seed.example.test',      '{"full_name":"Mar-com"}'),
   ('00000000-0000-4000-8000-000000000025', 'calon@seed.example.test',       '{"full_name":"Calon Orang Tua Pranata"}'),
-  ('00000000-0000-4000-8000-000000000026', 'head@seed.example.test',        '{"full_name":"Kepala Departemen"}')
+  ('00000000-0000-4000-8000-000000000026', 'head@seed.example.test',        '{"full_name":"Kepala Departemen"}'),
+  ('00000000-0000-4000-8000-000000000027', 'jurnal@seed.example.test',      '{"full_name":"Pembaca Jurnal"}'),
+  ('00000000-0000-4000-8000-000000000028', 'wawancara@seed.example.test',   '{"full_name":"Pewawancara"}'),
+  ('00000000-0000-4000-8000-000000000029', 'acara@seed.example.test',        '{"full_name":"Admin Acara"}'),
+  ('00000000-0000-4000-8000-000000000030', 'pembicara@seed.example.test',    '{"full_name":"Pembicara KTB"}')
 on conflict do nothing;
 
 -- ------------------------------------------------------------------ semester, classes
@@ -72,7 +76,11 @@ insert into public.user_roles (profile_id, role, scope_type, scope_id) values
   ('00000000-0000-4000-8000-000000000023', 'hrd', 'global', null),
   ('00000000-0000-4000-8000-000000000024', 'markom', 'global', null),
   ('00000000-0000-4000-8000-000000000025', 'prospect_parent', 'global', null),
-  ('00000000-0000-4000-8000-000000000026', 'head_department', 'global', null);
+  ('00000000-0000-4000-8000-000000000026', 'head_department', 'global', null),
+  ('00000000-0000-4000-8000-000000000027', 'journal_reader', 'global', null),
+  ('00000000-0000-4000-8000-000000000028', 'interviewer', 'global', null),
+  ('00000000-0000-4000-8000-000000000029', 'event_admin', 'global', null),
+  ('00000000-0000-4000-8000-000000000030', 'ktb_speaker', 'global', null);
 insert into public.user_roles (profile_id, role, scope_type, scope_id, active) values
   ('00000000-0000-4000-8000-000000000016', 'sk_guru', 'class', '30000000-0000-4000-8000-000000000002', false);
 

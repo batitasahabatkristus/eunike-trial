@@ -377,7 +377,8 @@
     "placeholder": {
       "title": "Coming soon",
       "body": "This page is already access-protected and will be filled in a later build phase.",
-      "reqs": "Related requirements"
+      "reqs": "Related requirements",
+      "mockBanner": "Preview mock-up. Data on this page is sample only and is not saved. Buttons only change the screen until you reload."
     },
     "states": {
       "empty": "No data yet.",

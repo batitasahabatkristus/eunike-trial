@@ -57,6 +57,14 @@ Website CMS (copy lives in `messages/*.json` as the fallback), 2FA enrolment scr
 ## Open questions that changed behaviour
 Q-02 repo source; Q-03 themes as in A-03; Q-04 DOB+phone login kept with rate limits (no PIN yet); Q-05 konseli form public; Q-06 volunteer/pendamping exist in the enum only; Q-08 default locale `id`; Q-15 link out.
 
+## Mockup layer (preview only)
+Every module that is not built yet (Admissions, Finance, Konseling, Communication, Website CMS, KTB, Events, Staff, Management) has a clickable **mockup** on previews: `lib/mock/screens/*`, rendered by `components/mock/MockScreen.tsx`.
+- Sample content only. State lives in the browser tab and is gone on reload; nothing is sent to the server or the database.
+- Shown only when `devAuthEnabled()` (local and Vercel Preview). On production, or when `EUNIKE_DEV_AUTH` is off, these paths are "Segera hadir" again.
+- Access rules still apply: each page sits behind `guard()` and the PRD §8 table. Konseling mockups never put a story in the admin list.
+- Four fake personas were added for roles the demo lacked: Pembaca Jurnal, Pewawancara, Admin Acara, Pembicara KTB.
+- Replacing a mockup with the real module = add a real page file at the same path; the catch-all is only a fallback.
+
 ## Before any real data or real users (do not skip)
 - Reset the Eunike trial database password (Supabase: Connect, Reset database password) to a random 24+ character letters-and-numbers one, then update `DATABASE_URL` in Vercel. The current one was shown in a screenshot and is weak.
 - Turn on leaked-password protection in Supabase Authentication.

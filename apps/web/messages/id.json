@@ -377,7 +377,8 @@
     "placeholder": {
       "title": "Segera hadir",
       "body": "Halaman ini sudah dilindungi akses, dan akan diisi pada fase pembangunan berikutnya.",
-      "reqs": "Kebutuhan terkait"
+      "reqs": "Kebutuhan terkait",
+      "mockBanner": "Contoh tampilan. Data di halaman ini hanya contoh dan tidak disimpan. Menekan tombol hanya mengubah layar sampai halaman dimuat ulang."
     },
     "states": {
       "empty": "Belum ada data.",
