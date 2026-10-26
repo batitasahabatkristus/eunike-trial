@@ -57,5 +57,12 @@ Website CMS (copy lives in `messages/*.json` as the fallback), 2FA enrolment scr
 ## Open questions that changed behaviour
 Q-02 repo source; Q-03 themes as in A-03; Q-04 DOB+phone login kept with rate limits (no PIN yet); Q-05 konseli form public; Q-06 volunteer/pendamping exist in the enum only; Q-08 default locale `id`; Q-15 link out.
 
+## Before any real data or real users (do not skip)
+- Reset the Eunike trial database password (Supabase: Connect, Reset database password) to a random 24+ character letters-and-numbers one, then update `DATABASE_URL` in Vercel. The current one was shown in a screenshot and is weak.
+- Turn on leaked-password protection in Supabase Authentication.
+- Add a PIN attempt limit: `verify_family_pin` can be called directly by a signed-in family member and is not rate limited.
+- Replace fake-persona login with real sign-in (Google / WhatsApp + date of birth) and test it; the persona login only works on Vercel Preview.
+- Decide who may see real children's data and how parents consent (Q-09).
+
 ## Next
 Phase 2 (KTB). Before that: a Supabase staging project to verify Auth and storage, and the real pilot exports.
